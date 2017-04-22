@@ -1,0 +1,9 @@
+{
+  "name": "js-boilerplate",
+  "version": "1.0.0",
+  "description": "js stack tutorial",
+  "main": "index.js",
+  "repository": "git@github.com:jasonkwong11/js-boilerplate.git",
+  "author": "Jason <jasonkwong11@gmail.com>",
+  "license": "MIT"
+}
