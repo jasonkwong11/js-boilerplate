@@ -1,4 +1,4 @@
-{ 
+{
   "extends": [
     "airbnb",
     "plugin:flowtype/recommended"
@@ -7,13 +7,16 @@
     "flowtype",
     "compat"
   ],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "settings": {
+    "polyfills": ["fetch"]
+  },
   "rules": {
     "semi": [2, "never"],
     "no-unexpected-multiline": 2,
     "compat/compat": 2
-  },
-  "env": {
-    "jest": true,
-    "browser": true
   }
 }
