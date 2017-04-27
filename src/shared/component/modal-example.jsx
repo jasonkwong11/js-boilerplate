@@ -3,7 +3,7 @@
 import React from 'react'
 
 const ModalExample = () =>
-  <div className="js-modal-example modal-fade">
+  <div className="js-modal-example modal fade">
     <div className="modal-dialog">
       <div className="modal-content">
         <div className="modal-header">
