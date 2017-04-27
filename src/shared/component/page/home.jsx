@@ -2,11 +2,29 @@
 
 import React from 'react'
 import Helmet from 'react-helmet'
+import injectSheet from 'react-jss'
 
 import ModalExample from '../modal-example'
 import { APP_NAME } from '../../config'
 
-const HomePage = () =>
+const styles = {
+  hoverMe: {
+    '&:hover': {
+      color: 'red',
+    },
+  },
+  '@media (max-width: 800px)': {
+    resizeMe: {
+      color: 'red',
+    },
+  },
+  specialButton: {
+    composes: ['btn', 'btn-primary'],
+    backgroundColor: 'limegreen',
+  },
+}
+
+const HomePage = ({ classes }: { classes: Object }) =>
   <div>
     <Helmet
       meta={[
@@ -22,7 +40,12 @@ const HomePage = () =>
     <div className="container">
       <div className="row">
         <div className="col-md-4 mb-4">
-          <h3 className="mb-3">Bootstrap</h3>
+          <h3 className="mb-3">JSS</h3>
+          <p className={classes.hoverMe}>Hover me.</p>
+          <p className={classes.resizeMe}>Resize the window.</p>
+          <button className={classes.specialButton}>Composition</button>
+        </div>
+        <div className="col-md-4 mb-4">
           <p>
             <button type="button" role="button" data-toggle="modal" data-target=".js-modal-example" className="btn btn-primary">Open Modal</button>
           </p>
@@ -36,4 +59,4 @@ const HomePage = () =>
     <ModalExample />
   </div>
 
-export default HomePage
+export default injectSheet(styles)(HomePage)
